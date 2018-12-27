@@ -50,7 +50,9 @@ int main(int argc, char const *argv[])
 		}
 		else
 		{
-			
+			if(count%2!=0){
+				#pragma offload target(mic:0)
+				{
 				generate_C();
 				if (C.size() == 0)
 					break;
@@ -75,7 +77,7 @@ int main(int argc, char const *argv[])
 				output(L);
 				index++;
 				count++;
-				
+				}
 			}
 			else{
 				generate_C();

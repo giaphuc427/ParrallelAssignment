@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
 		}
 		else
 		{
-			if(count%3!=1){
+			if(count%3==1){
 				#pragma offload target(mic:0)
 				{
 				generate_C();
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[])
 				count++;
 				}
 			}
-			else if(count%3!=2){
+			else if(count%3==2){
 				#pragma offload target(mic:1)
 				{
 				generate_C();
